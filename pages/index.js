@@ -1,6 +1,6 @@
-import { Grommet } from 'grommet';
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import { Grommet } from 'grommet'
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -64,5 +64,5 @@ export default function Home() {
         </footer>
       </div>
     </Grommet>
-  );
+  )
 }
