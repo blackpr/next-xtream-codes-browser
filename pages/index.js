@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <Grommet themeMode="dark">
+    <Grommet full themeMode="dark">
       <div className={styles.container}>
         <Head>
           <title>Create Next App</title>
