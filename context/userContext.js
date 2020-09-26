@@ -13,9 +13,13 @@ export default function UserContextComp({ children }) {
     localStorage.setItem('xtream_user', JSON.stringify(user))
     setUser({ ...user })
   }
+  function removeUser() {
+    localStorage.removeItem('xtream_user')
+    setUser({})
+  }
 
   return (
-    <UserContext.Provider value={{ user, saveUser }}>
+    <UserContext.Provider value={{ user, saveUser, removeUser }}>
       {children}
     </UserContext.Provider>
   )
