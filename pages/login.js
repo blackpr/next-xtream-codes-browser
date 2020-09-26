@@ -21,7 +21,6 @@ export default function Login() {
   const router = useRouter()
 
   function handleSubmit({ value }) {
-    console.log('todo', value)
     setLoading(true)
     let url = `${value.host}:${value.port}/player_api.php?username=${value.username}&password=${value.password}&output=ts`
     fetch(url)
@@ -32,7 +31,6 @@ export default function Login() {
             .then((data) => {
               setLoading(false)
               if (data?.user_info?.auth === 1) {
-                console.log(data)
                 saveUser({
                   username: value.username,
                   password: value.password,
