@@ -5,6 +5,7 @@ import LoginLayout from 'layout/Login'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 const LoginNav = () => {
   return (
@@ -57,6 +58,10 @@ export default function Login() {
   }
   return (
     <LoginLayout LoginNav={<LoginNav />}>
+      <Head>
+        <title>XTREAM CODES browser</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Form onSubmit={handleSubmit}>
         <FormField name="Host" htmlfor="host">
           <TextInput
