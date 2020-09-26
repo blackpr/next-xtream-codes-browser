@@ -1,8 +1,10 @@
 import Notification from '@/components/Notification'
+import { useUser } from 'context/userContext'
 import { Anchor, Box, Button, Form, FormField, Text, TextInput } from 'grommet'
 import LoginLayout from 'layout/Login'
 import Link from 'next/link'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const LoginNav = () => {
   return (
@@ -15,6 +17,8 @@ const LoginNav = () => {
 export default function Login() {
   const [loading, setLoading] = useState(false)
   const [showNotification, setShowNotification] = useState(false)
+  const { saveUser } = useUser()
+  const router = useRouter()
 
   function handleSubmit({ value }) {
     console.log('todo', value)
@@ -26,9 +30,16 @@ export default function Login() {
           res
             .json()
             .then((data) => {
+              setLoading(false)
               if (data?.user_info?.auth === 1) {
                 console.log(data)
-                // todo
+                saveUser({
+                  username: value.username,
+                  password: value.password,
+                  host: value.host,
+                  port: value.port,
+                })
+                router.push('/')
               }
             })
             .catch((e) => {
@@ -36,14 +47,14 @@ export default function Login() {
               setShowNotification(true)
               setLoading(false)
             })
+        } else {
+          setLoading(false)
         }
       })
       .catch((e) => {
         console.log(e)
-        setShowNotification(true)
-      })
-      .finally(() => {
         setLoading(false)
+        setShowNotification(true)
       })
   }
   return (
