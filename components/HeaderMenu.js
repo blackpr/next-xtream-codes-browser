@@ -1,4 +1,4 @@
-import { Anchor, Box, Menu, Nav, ResponsiveContext } from 'grommet'
+import { Anchor, Box, Menu, Nav, ResponsiveContext, Text } from 'grommet'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { Menu as MenuIcon } from 'grommet-icons'
@@ -18,9 +18,10 @@ export default function HeaderMenu() {
             {
               label: (
                 <Box alignSelf="center">
-                  <Link passHref href="/series">
+                  {/* <Link passHref href="/series">
                     <Anchor label="Series" href="/series" />
-                  </Link>
+                  </Link> */}
+                  <Text>Series</Text>
                 </Box>
               ),
               href: '/series',
@@ -33,9 +34,10 @@ export default function HeaderMenu() {
             {
               label: (
                 <Box alignSelf="center">
-                  <Link passHref href="/movies">
+                  {/* <Link passHref href="/movies">
                     <Anchor label="Movies" href="/movies" />
-                  </Link>
+                  </Link> */}
+                  <Text>Movies</Text>
                 </Box>
               ),
               href: '/movies',
@@ -48,9 +50,10 @@ export default function HeaderMenu() {
             {
               label: (
                 <Box alignSelf="center">
-                  <Link passHref href="/tv">
+                  {/* <Link passHref href="/tv">
                     <Anchor label="TV" href="/tv" />
-                  </Link>
+                  </Link> */}
+                  <Text>TV</Text>
                 </Box>
               ),
               href: '/tv',
@@ -63,9 +66,10 @@ export default function HeaderMenu() {
             {
               label: (
                 <Box alignSelf="center">
-                  <Link passHref href="/logout">
+                  {/* <Link passHref href="/logout">
                     <Anchor label="Logout" href="/logout" />
-                  </Link>
+                  </Link> */}
+                  <Text>Logout</Text>
                 </Box>
               ),
               href: '/logout',
