@@ -1,5 +1,4 @@
 import { Box, InfiniteScroll, Text } from 'grommet'
-
 export default function SeriesCategoriesList({ categories, ...props }) {
   return (
     <Box>
