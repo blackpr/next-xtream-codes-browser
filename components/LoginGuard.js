@@ -2,6 +2,7 @@ import { useUser } from 'context/userContext'
 import { Text } from 'grommet'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import FullPageSpinner from './Spinner/FullPage'
 
 export default function LoginGuard({ children }) {
   const { user } = useUser()
@@ -43,7 +44,7 @@ export default function LoginGuard({ children }) {
   }, [])
 
   if (loading) {
-    return <Text>loading...</Text>
+    return <FullPageSpinner />
   }
 
   if (!isCorrectUser) {

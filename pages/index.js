@@ -1,4 +1,5 @@
-import PageLayout from 'layout/PageLaoyout'
+import FullPageSpinner from '@/components/Spinner/FullPage'
+import PageLayout from 'layout/PageLayout'
 import Head from 'next/head'
 
 export default function Home() {
@@ -8,7 +9,8 @@ export default function Home() {
         <title>XTREAM CODES browser</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>test</div>
+      <div>yo</div>
+      <FullPageSpinner />
     </PageLayout>
   )
 }

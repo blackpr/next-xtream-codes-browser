@@ -1,17 +1,6 @@
 import LoginGuard from '@/components/LoginGuard'
 import XTRMSidebar from '@/components/Sidebar'
-import {
-  Anchor,
-  Avatar,
-  Box,
-  Button,
-  Collapsible,
-  Grommet,
-  Heading,
-  Nav,
-  Sidebar,
-} from 'grommet'
-import { Channel, Ticket, Video } from 'grommet-icons'
+import { Anchor, Avatar, Box, Grommet, Heading, Nav } from 'grommet'
 import Link from 'next/link'
 
 export default function PageLayout({ children }) {
