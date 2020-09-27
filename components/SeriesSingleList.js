@@ -71,10 +71,10 @@ export default function SereisSingleList({ series }) {
         )}
         {showUrl && (
           <Box align="start">
-            <Button onClick={handleCopyUrl} label="Copy URL" />
             <Heading size="small" level={3}>
               {url}
             </Heading>
+            <Button onClick={handleCopyUrl} label="Copy URL" />
           </Box>
         )}
       </Box>
