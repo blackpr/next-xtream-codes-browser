@@ -70,14 +70,12 @@ export default function SereisSingleList({ series }) {
           />
         )}
         {showUrl && (
-          <>
-            <Button onClick={handleCopyUrl}>Copy URL</Button>
-            <Box>
-              <Heading size="small" level={3}>
-                {url}
-              </Heading>
-            </Box>
-          </>
+          <Box align="start">
+            <Button onClick={handleCopyUrl} label="Copy URL" />
+            <Heading size="small" level={3}>
+              {url}
+            </Heading>
+          </Box>
         )}
       </Box>
       <Notification
