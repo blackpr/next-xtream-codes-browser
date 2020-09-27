@@ -7,7 +7,7 @@ export default function MoviesCategoriesList({ categories }) {
       <InfiniteScroll items={categories}>
         {(item) => (
           <Link
-            href="/movies/[movieId]"
+            href="/movies/[categoryId]"
             as={`/movies/${item?.category_id}`}
             key={item?.category_id}
           >
