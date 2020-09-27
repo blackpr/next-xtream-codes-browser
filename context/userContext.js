@@ -10,6 +10,8 @@ export default function UserContextComp({ children }) {
   })
 
   function saveUser(user = {}) {
+    user.playerApiUrl = `${user?.host}:${user?.port}/player_api.php?username=${user?.username}&password=${user?.password}&type=m3u_plus&output=ts`
+
     localStorage.setItem('xtream_user', JSON.stringify(user))
     setUser({ ...user })
   }
