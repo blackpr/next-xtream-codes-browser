@@ -32,9 +32,13 @@ export default function PageLayout({ children }) {
             </Link>
           </Nav>
         </Box>
-        <Box direction="row" height={{ min: '92vh' }}>
-          <XTRMSidebar />
-          <Box pad="large">{children}</Box>
+        <Box direction="row">
+          <Box direction="row" height={{ min: '92vh' }}>
+            <XTRMSidebar />
+          </Box>
+          <Box pad="large" flex="grow">
+            {children}
+          </Box>
         </Box>
       </Grommet>
     </LoginGuard>
