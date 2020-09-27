@@ -5,7 +5,7 @@ import { Avatar, Box, Grommet, Heading } from 'grommet'
 
 export default function PageLayout({ children }) {
   return (
-    <>
+    <LoginGuard>
       <Grommet full>
         <Box
           as="header"
@@ -37,6 +37,6 @@ export default function PageLayout({ children }) {
           </Box>
         </Box>
       </Grommet>
-    </>
+    </LoginGuard>
   )
 }

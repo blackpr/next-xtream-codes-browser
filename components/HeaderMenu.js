@@ -4,6 +4,8 @@ import { useContext } from 'react'
 import { Menu as MenuIcon } from 'grommet-icons'
 import { Channel, Ticket, Video, Logout } from 'grommet-icons'
 
+// note: remove next links because of nesting <a/>
+
 export default function HeaderMenu() {
   const size = useContext(ResponsiveContext)
 
