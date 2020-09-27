@@ -14,3 +14,16 @@ export function useSeriesCategories() {
     isError: error,
   }
 }
+
+export function useSeriesCategory(categoryId) {
+  const { user } = useUser()
+  const { data, error } = useSWR(
+    `${user.playerApiUrl}&action=get_series&category_id=${categoryId}`,
+    fetcher
+  )
+  return {
+    series: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}
