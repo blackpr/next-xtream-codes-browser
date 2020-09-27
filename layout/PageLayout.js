@@ -1,7 +1,7 @@
+import HeaderMenu from '@/components/HeaderMenu'
 import LoginGuard from '@/components/LoginGuard'
 import XTRMSidebar from '@/components/Sidebar'
-import { Anchor, Avatar, Box, Grommet, Heading, Nav } from 'grommet'
-import Link from 'next/link'
+import { Avatar, Box, Grommet, Heading } from 'grommet'
 
 export default function PageLayout({ children }) {
   return (
@@ -26,11 +26,7 @@ export default function PageLayout({ children }) {
               <strong>XTREAM CODES browser</strong>
             </Heading>
           </Box>
-          <Nav direction="row">
-            <Link passHref href="/logout">
-              <Anchor label="Logout" href="/logout" />
-            </Link>
-          </Nav>
+          <HeaderMenu />
         </Box>
         <Box direction="row">
           <Box direction="row" height={{ min: '92vh' }}>
