@@ -41,7 +41,7 @@ export default function MoviesCategoryList({ movies }) {
                 <Text>{item?.name}</Text>{' '}
                 <Text>
                   {' '}
-                  {' - '} {`Rating: ${item?.rating}`}
+                  {' - '} {`Rating: ${item?.rating || '-'}`}
                 </Text>
               </Box>
             </Link>

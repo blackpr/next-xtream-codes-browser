@@ -2,6 +2,7 @@ import HeaderMenu from '@/components/HeaderMenu'
 import LoginGuard from '@/components/LoginGuard'
 import XTRMSidebar from '@/components/Sidebar'
 import { Avatar, Box, Grommet, Heading } from 'grommet'
+import Link from 'next/link'
 
 export default function PageLayout({ children }) {
   return (
@@ -23,7 +24,11 @@ export default function PageLayout({ children }) {
               src="https://randomuser.me/api/portraits/lego/8.jpg"
             />
             <Heading level={3} margin="none" color="white">
-              <strong>XTREAM CODES browser</strong>
+              <strong>
+                <Link href="/">
+                  <a>XTREAM CODES browser</a>
+                </Link>
+              </strong>
             </Heading>
           </Box>
           <HeaderMenu />
