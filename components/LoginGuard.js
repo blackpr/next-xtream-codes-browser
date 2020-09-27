@@ -1,5 +1,4 @@
 import { useUser } from 'context/userContext'
-import { Text } from 'grommet'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import FullPageSpinner from './Spinner/FullPage'
