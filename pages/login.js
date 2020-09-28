@@ -24,7 +24,7 @@ export default function Login() {
   function handleSubmit({ value }) {
     setLoading(true)
     let url = `${value.host}:${value.port}/player_api.php?username=${value.username}&password=${value.password}&output=ts`
-    fetch(url)
+    fetch(`/api/fetch?url=${encodeURIComponent(url)}`)
       .then((res) => {
         if (res.ok) {
           res
