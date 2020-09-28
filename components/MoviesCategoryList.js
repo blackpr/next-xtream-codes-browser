@@ -33,7 +33,7 @@ export default function MoviesCategoryList({ movies }) {
             gap="medium"
           >
             <Link
-              href="/movies/[categoryId]/[seriesId]"
+              href="/movies/[categoryId]/[movieId]"
               as={`/movies/${item?.category_id}/${item?.stream_id}`}
               key={item?.stream_id}
             >
