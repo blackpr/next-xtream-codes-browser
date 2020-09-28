@@ -2,10 +2,13 @@ import { useUser } from 'context/userContext'
 import useSWR from 'swr'
 import fetcher from 'utils/fetcher'
 
+// cors proxy because of mixed content
+// https://github.com/netnr/workers
+
 export function useMoviesCategories() {
   const { user } = useUser()
   const { data, error } = useSWR(
-    `${user.playerApiUrl}&action=get_vod_categories`,
+    `https://cors.zme.ink/${user.playerApiUrl}&action=get_vod_categories`,
     fetcher
   )
   return {
@@ -18,7 +21,7 @@ export function useMoviesCategories() {
 export function useMoviesCategory(categoryId) {
   const { user } = useUser()
   const { data, error } = useSWR(
-    `${user.playerApiUrl}&action=get_vod_streams&category_id=${categoryId}`,
+    `https://cors.zme.ink/${user.playerApiUrl}&action=get_vod_streams&category_id=${categoryId}`,
     fetcher
   )
   return {
@@ -31,7 +34,7 @@ export function useMoviesCategory(categoryId) {
 export function useMovieSingle(movieId) {
   const { user } = useUser()
   const { data, error } = useSWR(
-    `${user.playerApiUrl}&action=get_vod_info&vod_id=${movieId}`,
+    `https://cors.zme.ink/${user.playerApiUrl}&action=get_vod_info&vod_id=${movieId}`,
     fetcher
   )
   return {

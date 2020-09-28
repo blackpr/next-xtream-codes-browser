@@ -2,10 +2,13 @@ import { useUser } from 'context/userContext'
 import useSWR from 'swr'
 import fetcher from 'utils/fetcher'
 
+// cors proxy because of mixed content
+// https://github.com/netnr/workers
+
 export function useTvCategories() {
   const { user } = useUser()
   const { data, error } = useSWR(
-    `${user.playerApiUrl}&action=get_live_categories`,
+    `https://cors.zme.ink/${user.playerApiUrl}&action=get_live_categories`,
     fetcher
   )
   return {
@@ -18,7 +21,7 @@ export function useTvCategories() {
 export function useTvCategory(categoryId) {
   const { user } = useUser()
   const { data, error } = useSWR(
-    `${user.playerApiUrl}&action=get_live_streams&category_id=${categoryId}`,
+    `https://cors.zme.ink/${user.playerApiUrl}&action=get_live_streams&category_id=${categoryId}`,
     fetcher
   )
   return {

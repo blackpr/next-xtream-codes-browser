@@ -16,7 +16,9 @@ export default function LoginGuard({ children }) {
   }
 
   useEffect(() => {
-    let url = `${user.host}:${user.port}/player_api.php?username=${user.username}&password=${user.password}&output=ts`
+    // cors proxy because of mixed content
+    // https://github.com/netnr/workers
+    let url = `https://cors.zme.ink/${user.host}:${user.port}/player_api.php?username=${user.username}&password=${user.password}&output=ts`
     fetch(url)
       .then((res) => {
         if (res.ok) {
