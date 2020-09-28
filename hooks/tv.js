@@ -14,3 +14,16 @@ export function useTvCategories() {
     isError: error,
   }
 }
+
+export function useTvCategory(categoryId) {
+  const { user } = useUser()
+  const { data, error } = useSWR(
+    `${user.playerApiUrl}&action=get_live_streams&category_id=${categoryId}`,
+    fetcher
+  )
+  return {
+    channels: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}
