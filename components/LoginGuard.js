@@ -16,9 +16,7 @@ export default function LoginGuard({ children }) {
   }
 
   useEffect(() => {
-    let url = `/api/fetch?url=${encodeURIComponent(
-      `${user.host}:${user.port}/player_api.php?username=${user.username}&password=${user.password}&output=ts`
-    )}`
+    let url = `${user.host}:${user.port}/player_api.php?username=${user.username}&password=${user.password}&output=ts`
     fetch(url)
       .then((res) => {
         if (res.ok) {
