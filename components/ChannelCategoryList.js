@@ -9,7 +9,8 @@ export default function ChannelCategoryList({ channels }) {
   const { user } = useUser()
 
   function handleCopyUrl(item) {
-    const url = `${user?.host}:${user?.port}/${user?.username}/${user?.password}/${item?.stream_id}`
+    // ?.mkv hack for sremio
+    const url = `${user?.host}:${user?.port}/${user?.username}/${user?.password}/${item?.stream_id}?.mkv`
     copy(url)
     setShowNotification(true)
   }
