@@ -25,8 +25,7 @@ export default function Login() {
     setLoading(true)
     // cors proxy because of mixed content
     // https://github.com/netnr/workers
-    // let url = `https://cors.zme.ink/${value.host}:${value.port}/player_api.php?username=${value.username}&password=${value.password}&output=ts`
-    let url = `${value.host}:${value.port}/player_api.php?username=${value.username}&password=${value.password}&output=ts`
+    let url = `https://cors.zme.ink/${value.host}:${value.port}/player_api.php?username=${value.username}&password=${value.password}&output=ts`
     fetch(url)
       .then((res) => {
         if (res.ok) {
