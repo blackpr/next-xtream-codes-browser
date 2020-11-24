@@ -5,10 +5,11 @@ export default async (req, res) => {
     if (response.ok) {
       const data = await response.json()
       return res.json(data)
+    } else {
+      return res.status(500).json({})
     }
   } catch (e) {
     console.log(e)
   }
-  throw new Error()
-  res.status(500).json({})
+  return res.status(500).json({})
 }
