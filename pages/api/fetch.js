@@ -5,9 +5,11 @@ export default async (req, res) => {
   console.log('start', { url })
   try {
     const response = await axios.get(decodeURIComponent(url))
+    console.log('response', response.data)
     return res.json(response.data)
   } catch (e) {
-    console.log(e)
+    console.log('error', e)
+    return res.status(500).json({})
   }
   return res.status(500).json({})
 }
