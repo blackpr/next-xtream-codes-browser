@@ -4,14 +4,15 @@ export default async (req, res) => {
   const url = req.query.url
   console.log('start', { url })
   try {
-    const response = await axios.get(decodeURIComponent(url))
+    const proxyUrl = `${process.env.PROXY_URL}${decodeURIComponent(url)}`
+    console.log({ proxyUrl })
+    const response = await axios.get(proxyUrl)
     console.log('response', response.data)
     return res.json(response.data)
   } catch (e) {
     console.log('error', e)
     return res.status(500).json({})
   }
-  return res.status(500).json({})
 }
 
 // export default async (req, res) => {
