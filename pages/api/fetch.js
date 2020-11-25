@@ -3,8 +3,10 @@ const axios = require('axios').default
 export default async (req, res) => {
   const url = req.query.url
   try {
+    const isDev = process.env.NODE_ENV !== 'production'
     const proxyUrl = `${process.env.PROXY_URL}${decodeURIComponent(url)}`
-    const response = await axios.get(proxyUrl)
+    const finalUrl = isDev ? url : proxyUrl
+    const response = await axios.get(finalUrl)
     return res.json(response.data)
   } catch (e) {
     console.log('error', e)
